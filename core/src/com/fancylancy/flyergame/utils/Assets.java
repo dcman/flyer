@@ -28,7 +28,7 @@ public class Assets extends AssetManager implements Disposable {
         viewport = new FitViewport(screenWidth, screenHeight, camera);
         camera.setToOrtho(false, viewport.getWorldWidth(), viewport.getWorldHeight());
         batch = new SpriteBatch();
-        img = new Texture("libGDX1.png");
+        img = new Texture("libGDX.png");
 
     }
 
