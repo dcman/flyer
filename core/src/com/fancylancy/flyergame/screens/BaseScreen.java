@@ -4,7 +4,6 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Disposable;
@@ -19,14 +18,12 @@ public abstract class BaseScreen extends ScreenAdapter implements Disposable {
     protected Game game;
     protected Assets assets;
     protected Rectangle bounds;
-    protected ShapeRenderer shapeRenderer;
 
     public BaseScreen(Game game) {
         this.game = game;
         this.camera = Assets.getInstance().getCamera();
         this.assets = Assets.getInstance();
         this.bounds = new Rectangle(0, 0, Assets.getScreenWidth(), Assets.getScreenHeight());
-        this.shapeRenderer = new ShapeRenderer();
     }
 
     protected void clickHandler() {
@@ -45,6 +42,5 @@ public abstract class BaseScreen extends ScreenAdapter implements Disposable {
         Gdx.app.debug(TAG, " Disposing...");
         assets.dispose();
         game.dispose();
-        shapeRenderer.dispose();
     }
 }

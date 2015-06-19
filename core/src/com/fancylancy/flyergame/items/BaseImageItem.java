@@ -40,11 +40,13 @@ public class BaseImageItem implements Disposable {
     }
 
     public void render(float delta) {
-        shapeRenderer.setProjectionMatrix(Assets.getInstance().getCamera().combined);
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(1, 1, 0, 1);
-        shapeRenderer.rect(bounds.getX(), bounds.getY(), bounds.getWidth(), bounds.getHeight());
-        shapeRenderer.end();
+        if (Gdx.app.getLogLevel() == 3) {
+            shapeRenderer.setProjectionMatrix(Assets.getInstance().getCamera().combined);
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+            shapeRenderer.setColor(1, 1, 0, 1);
+            shapeRenderer.rect(bounds.getX(), bounds.getY(), bounds.getWidth(), bounds.getHeight());
+            shapeRenderer.end();
+        }
     }
 
     @Override
