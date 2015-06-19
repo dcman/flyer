@@ -25,17 +25,23 @@ public class LogoScreen extends BaseScreen {
     @Override
     public void render(float delta) {
         super.render(delta);
-        assets.getCamera().update();
-        Gdx.gl.glClearColor(.99f, .99f, .99f, 1);
+        camera.update();
+        Gdx.gl.glClearColor(182 / 255f, 182 / 255f, 182 / 255f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        assets.getBatch().setProjectionMatrix(assets.getCamera().combined);
+        batch.setProjectionMatrix(camera.combined);
         logoImage.render(delta);
-        if (clickWaitTime > 0) {
-            clickWaitTime = clickWaitTime - 1;
-        } else clickHandler();
+        clickHandler();
         if (zoom > 0) {
             camera.zoom = zoom;
             zoom = zoom - 1;
+        }
+    }
+
+    @Override
+    protected void clickHandler() {
+        if (Gdx.input.justTouched()) {
+            game.setScreen(new LayoutScreen(game));
+
         }
     }
 
