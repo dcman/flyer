@@ -1,1 +1,1 @@
-Base classes to use for a libGdx game. 
+Base classes to use in a libGdx game. 
