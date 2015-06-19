@@ -26,7 +26,6 @@ public class LogoImage extends BaseImageItem {
         batch.begin();
         batch.draw(texture, worldHalfWidth - textureHalfWidth, worldHalfHeight - textureHalfHeight);
         batch.end();
-        clickHandler();
     }
 
     @Override

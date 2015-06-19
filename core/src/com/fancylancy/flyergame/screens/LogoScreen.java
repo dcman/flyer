@@ -12,6 +12,7 @@ import com.fancylancy.flyergame.items.LogoImage;
 public class LogoScreen extends BaseScreen {
     private LogoImage logoImage;
     private float zoom = 100;
+    private float clickWaitTime = 3;
 
     public LogoScreen(Game game) {
         super(game);
@@ -29,7 +30,9 @@ public class LogoScreen extends BaseScreen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         assets.getBatch().setProjectionMatrix(assets.getCamera().combined);
         logoImage.render(delta);
-        clickHandler();
+        if (clickWaitTime > 0) {
+            clickWaitTime = clickWaitTime - 1;
+        } else clickHandler();
         if (zoom > 0) {
             camera.zoom = zoom;
             zoom = zoom - 1;
