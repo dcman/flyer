@@ -3,19 +3,21 @@ package com.fancylancy.flyergame.screens;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.fancylancy.flyergame.items.TestImage;
+import com.fancylancy.flyergame.items.LogoImage;
 
 /**
  * Created by SuckIt on 6/16/15.
+ * Logo Screen
  */
-public class TestScreen extends BaseScreen {
-    private TestImage testImage;
+public class LogoScreen extends BaseScreen {
+    private LogoImage logoImage;
     private float zoom = 100;
-    public TestScreen(Game game) {
+
+    public LogoScreen(Game game) {
         super(game);
-        TAG = TestScreen.class.getName();
+        TAG = LogoScreen.class.getName();
         Gdx.app.debug(TAG, " Created");
-        testImage = new TestImage();
+        logoImage = new LogoImage();
         camera.zoom = zoom;
     }
 
@@ -26,7 +28,7 @@ public class TestScreen extends BaseScreen {
         Gdx.gl.glClearColor(.99f, .99f, .99f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         assets.getBatch().setProjectionMatrix(assets.getCamera().combined);
-        testImage.render(delta);
+        logoImage.render(delta);
         clickHandler();
         if (zoom > 0) {
             camera.zoom = zoom;

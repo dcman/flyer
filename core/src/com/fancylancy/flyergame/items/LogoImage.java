@@ -6,11 +6,12 @@ import com.fancylancy.flyergame.utils.Assets;
 
 /**
  * Created by SuckIt on 6/17/15.
+ * Logo Image
  */
-public class TestImage extends BaseImageItem {
+public class LogoImage extends BaseImageItem {
 
-    public TestImage() {
-        TAG = TestImage.class.getName();
+    public LogoImage() {
+        TAG = LogoImage.class.getName();
         texture = Assets.getInstance().getImg();
         batch = Assets.getInstance().getBatch();
         textureHalfHeight = texture.getHeight() / 2;

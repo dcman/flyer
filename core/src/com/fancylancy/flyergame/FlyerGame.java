@@ -3,7 +3,7 @@ package com.fancylancy.flyergame;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.fancylancy.flyergame.screens.TestScreen;
+import com.fancylancy.flyergame.screens.LogoScreen;
 import com.fancylancy.flyergame.utils.Assets;
 
 public class FlyerGame extends Game {
@@ -14,7 +14,7 @@ public class FlyerGame extends Game {
     public void create() {
         assets = Assets.getInstance();
         Gdx.app.setLogLevel(Application.LOG_DEBUG);
-        setScreen(new TestScreen(this));
+        setScreen(new LogoScreen(this));
     }
 
     @Override
