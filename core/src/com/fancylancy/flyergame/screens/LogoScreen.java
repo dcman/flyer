@@ -30,7 +30,9 @@ public class LogoScreen extends BaseScreen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.setProjectionMatrix(camera.combined);
         logoImage.render(delta);
-        clickHandler();
+        if (zoom == 0) {
+            clickHandler();
+        }
         if (zoom > 0) {
             camera.zoom = zoom;
             zoom = zoom - 1;
