@@ -22,7 +22,7 @@ public class LayoutScreen extends BaseScreen {
     public void render(float delta) {
         super.render(delta);
         camera.update();
-        Gdx.gl.glClearColor(1, 1, 1, 1);
+        Gdx.gl.glClearColor(182 / 255f, 182 / 255f, 182 / 255f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.setProjectionMatrix(assets.getCamera().combined);
         layoutImage.render(delta);
