@@ -40,7 +40,7 @@ public class BaseImageItem implements Disposable {
         }
     }
 
-    private void clicked() {
+    protected void clicked() {
 
     }
 
