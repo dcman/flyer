@@ -9,6 +9,10 @@ import com.fancylancy.flyergame.utils.Assets;
  * Created by SuckIt on 6/19/15.
  */
 public class LayoutImage extends BaseImageItem {
+    private float textureHalfWidth;
+    private float textureHalfHeight;
+    private float worldHalfWidth = Assets.getScreenWidth() / 2;
+    private float worldHalfHeight = Assets.getScreenHeight() / 2;
 
     public LayoutImage() {
         texture = new Texture("flyerlayout.png");

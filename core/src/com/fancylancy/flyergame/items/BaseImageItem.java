@@ -19,10 +19,6 @@ public class BaseImageItem implements Disposable {
     protected Texture texture;
     protected SpriteBatch batch;
     protected Rectangle bounds;
-    protected float textureHalfWidth;
-    protected float textureHalfHeight;
-    protected float worldHalfWidth = Assets.getScreenWidth() / 2;
-    protected float worldHalfHeight = Assets.getScreenHeight() / 2;
     protected ShapeRenderer shapeRenderer;
 
     public BaseImageItem() {
@@ -44,7 +40,7 @@ public class BaseImageItem implements Disposable {
 
     }
 
-    public void render(float delta) {
+    protected void render(float delta) {
         if (Gdx.app.getLogLevel() == 3) {
             shapeRenderer.setProjectionMatrix(Assets.getInstance().getCamera().combined);
             shapeRenderer.begin(ShapeRenderer.ShapeType.Line);

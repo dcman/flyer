@@ -9,6 +9,10 @@ import com.fancylancy.flyergame.utils.Assets;
  * Logo Image
  */
 public class LogoImage extends BaseImageItem {
+    private float textureHalfWidth;
+    private float textureHalfHeight;
+    private float worldHalfWidth = Assets.getScreenWidth() / 2;
+    private float worldHalfHeight = Assets.getScreenHeight() / 2;
 
     public LogoImage() {
         TAG = LogoImage.class.getName();
