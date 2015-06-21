@@ -41,6 +41,7 @@ public class BaseImageItem implements Disposable {
     }
 
     private void clicked() {
+
     }
 
     public void render(float delta) {
