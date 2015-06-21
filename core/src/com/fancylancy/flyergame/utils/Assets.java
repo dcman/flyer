@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
  * Created by SuckIt on 6/16/15.
+ * Assets manager
  */
 public class Assets extends AssetManager implements Disposable {
     private static final String TAG = AssetManager.class.getName();

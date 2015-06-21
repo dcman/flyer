@@ -12,6 +12,7 @@ import com.fancylancy.flyergame.utils.Assets;
 
 /**
  * Created by SuckIt on 6/16/15.
+ * Basic functions for a screen
  */
 public abstract class BaseScreen extends ScreenAdapter implements Disposable {
     protected static String TAG;
@@ -35,8 +36,12 @@ public abstract class BaseScreen extends ScreenAdapter implements Disposable {
             Assets.getInstance().getCamera().unproject(touch.set(Gdx.input.getX(), Gdx.input.getY(), 0));
             if (bounds.contains(touch.x, touch.y)) {
                 Gdx.app.debug(TAG, " Someone touched me");
+                clicked();
             }
         }
+    }
+
+    protected void clicked() {
     }
 
     @Override

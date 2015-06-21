@@ -12,7 +12,6 @@ import com.fancylancy.flyergame.items.LogoImage;
 public class LogoScreen extends BaseScreen {
     private LogoImage logoImage;
     private float zoom = 100;
-    private float clickWaitTime = 3;
 
     public LogoScreen(Game game) {
         super(game);
@@ -40,11 +39,8 @@ public class LogoScreen extends BaseScreen {
     }
 
     @Override
-    protected void clickHandler() {
-        if (Gdx.input.justTouched()) {
-            game.setScreen(new LayoutScreen(game));
-
-        }
+    protected void clicked() {
+        game.setScreen(new LayoutScreen(game));
     }
 
     @Override
