@@ -1,0 +1,47 @@
+
+Flyer.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Header
+  rotate: false
+  xy: 2, 93
+  size: 480, 356
+  orig: 480, 356
+  offset: 0, 0
+  index: -1
+Normal
+  rotate: false
+  xy: 2, 2
+  size: 470, 86
+  orig: 470, 86
+  offset: 0, 0
+  index: -1
+Pressed
+  rotate: false
+  xy: 487, 363
+  size: 470, 86
+  orig: 470, 86
+  offset: 0, 0
+  index: -1
+libGDX
+  rotate: false
+  xy: 487, 263
+  size: 448, 95
+  orig: 448, 95
+  offset: 0, 0
+  index: -1
+Largtext
+  rotate: false
+  xy: 487, 166
+  size: 340, 92
+  orig: 340, 92
+  offset: 0, 0
+  index: -1
+Smalltext
+  rotate: false
+  xy: 487, 68
+  size: 159, 93
+  orig: 159, 93
+  offset: 0, 0
+  index: -1

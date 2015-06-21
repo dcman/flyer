@@ -12,19 +12,20 @@ public class LogoImage extends BaseImageItem {
 
     public LogoImage() {
         TAG = LogoImage.class.getName();
-        texture = Assets.getInstance().getImg();
+        textureRegion = Assets.getInstance().getRegion();
         batch = Assets.getInstance().getBatch();
-        textureHalfHeight = texture.getHeight() / 2;
-        textureHalfWidth = texture.getWidth() / 2;
+        textureHalfHeight = textureRegion.getRegionHeight() / 2;
+        textureHalfWidth = textureRegion.getRegionWidth() / 2;
         shapeRenderer = new ShapeRenderer();
-        bounds = new Rectangle(worldHalfWidth - textureHalfWidth, worldHalfHeight - textureHalfHeight, texture.getWidth(), texture.getHeight());
+        bounds = new Rectangle(worldHalfWidth - textureHalfWidth, worldHalfHeight - textureHalfHeight,
+                textureRegion.getRegionWidth(), textureRegion.getRegionHeight());
     }
 
     @Override
     public void render(float delta) {
         super.render(delta);
         batch.begin();
-        batch.draw(texture, worldHalfWidth - textureHalfWidth, worldHalfHeight - textureHalfHeight);
+        batch.draw(textureRegion, worldHalfWidth - textureHalfWidth, worldHalfHeight - textureHalfHeight);
         batch.end();
     }
 

@@ -35,8 +35,12 @@ public class BaseImageItem implements Disposable {
             Assets.getInstance().getCamera().unproject(touch.set(Gdx.input.getX(), Gdx.input.getY(), 0));
             if (bounds.contains(touch.x, touch.y)) {
                 Gdx.app.debug(TAG, " Someone touched me");
+                clicked();
             }
         }
+    }
+
+    private void clicked() {
     }
 
     public void render(float delta) {

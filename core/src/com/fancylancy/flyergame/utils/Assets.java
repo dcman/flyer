@@ -5,6 +5,8 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -21,6 +23,8 @@ public class Assets extends AssetManager implements Disposable {
     private Texture img;
     private OrthographicCamera camera;
     private Viewport viewport;
+    private TextureAtlas atlas;
+    private TextureRegion region;
 
     private Assets() {
         camera = new OrthographicCamera(screenWidth, screenHeight);
@@ -29,7 +33,8 @@ public class Assets extends AssetManager implements Disposable {
         camera.setToOrtho(false, viewport.getWorldWidth(), viewport.getWorldHeight());
         batch = new SpriteBatch();
         img = new Texture("libGDX.png");
-
+        atlas = new TextureAtlas("Flyer.pack");
+        region = atlas.findRegion("libGDX");
     }
 
     public static Assets getInstance() {
@@ -42,6 +47,10 @@ public class Assets extends AssetManager implements Disposable {
 
     public static float getScreenHeight() {
         return screenHeight;
+    }
+
+    public TextureRegion getRegion() {
+        return region;
     }
 
     public Viewport getViewport() {
@@ -66,5 +75,6 @@ public class Assets extends AssetManager implements Disposable {
         Gdx.app.debug(TAG, " Disposing...");
         img.dispose();
         batch.dispose();
+        atlas.dispose();
     }
 }
