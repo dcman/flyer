@@ -40,7 +40,7 @@ public class LogoScreen extends BaseScreen {
 
     @Override
     protected void clicked() {
-        game.setScreen(new LayoutScreen(game));
+        game.setScreen(new IATAScreen(game));
     }
 
     @Override
