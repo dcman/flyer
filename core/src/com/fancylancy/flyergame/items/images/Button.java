@@ -3,6 +3,7 @@ package com.fancylancy.flyergame.items.images;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
+import com.fancylancy.flyergame.items.labels.TestLabel;
 import com.fancylancy.flyergame.utils.Assets;
 
 /**
@@ -13,6 +14,7 @@ public class Button extends BaseImageItem {
     private TextureRegion normal;
     private TextureRegion pressed;
     private boolean isPressed;
+    private TestLabel test;
 
     public Button(float x, float y) {
         this.x = x;
@@ -25,6 +27,7 @@ public class Button extends BaseImageItem {
         normal = atlas.findRegion("Normal");
         bounds = new Rectangle(x, y, normal.getRegionWidth(), normal.getRegionHeight());
         shapeRenderer = new ShapeRenderer();
+        test = new TestLabel(x, y);
 
     }
 
@@ -39,6 +42,7 @@ public class Button extends BaseImageItem {
             batch.draw(normal, x, y);
         }
         batch.end();
+        test.render(delta);
         clickHandler();
     }
 
