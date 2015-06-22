@@ -3,10 +3,10 @@ package com.fancylancy.flyergame.screens;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.fancylancy.flyergame.items.Button;
-import com.fancylancy.flyergame.items.HeaderImage;
-import com.fancylancy.flyergame.items.LargeTextImage;
-import com.fancylancy.flyergame.items.SmallTextImage;
+import com.fancylancy.flyergame.items.images.Button;
+import com.fancylancy.flyergame.items.images.HeaderImage;
+import com.fancylancy.flyergame.items.images.LargeTextImage;
+import com.fancylancy.flyergame.items.images.SmallTextImage;
 
 /**
  * Created by SuckIt on 6/21/15.

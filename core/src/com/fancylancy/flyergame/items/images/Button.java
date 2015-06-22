@@ -1,4 +1,4 @@
-package com.fancylancy.flyergame.items;
+package com.fancylancy.flyergame.items.images;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;

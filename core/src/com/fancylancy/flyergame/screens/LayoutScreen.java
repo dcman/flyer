@@ -3,7 +3,7 @@ package com.fancylancy.flyergame.screens;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.fancylancy.flyergame.items.LayoutImage;
+import com.fancylancy.flyergame.items.images.LayoutImage;
 
 /**
  * Created by SuckIt on 6/19/15.
