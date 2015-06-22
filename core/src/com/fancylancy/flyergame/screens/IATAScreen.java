@@ -24,7 +24,14 @@ public class IATAScreen extends BaseScreen {
     public IATAScreen(Game game) {
         super(game);
         TAG = IATAScreen.class.getName();
-        headerImage = new HeaderImage(0f, 480f);
+        headerImage = new HeaderImage(0f, 442f);
+        city = new LargeTextImage(67f, 465f);
+        time = new SmallTextImage(289f, 678f);
+        score = new SmallTextImage(30f, 678f);
+        b1 = new Button(5f, 350f);
+        b2 = new Button(5f, 263f);
+        b3 = new Button(5f, 176f);
+        b4 = new Button(5f, 89f);
     }
 
     @Override
@@ -35,6 +42,13 @@ public class IATAScreen extends BaseScreen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.setProjectionMatrix(camera.combined);
         headerImage.render(delta);
+        city.render(delta);
+        time.render(delta);
+        score.render(delta);
+        b1.render(delta);
+        b2.render(delta);
+        b3.render(delta);
+        b4.render(delta);
     }
 
     @Override

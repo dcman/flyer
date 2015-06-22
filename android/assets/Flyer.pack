@@ -31,14 +31,14 @@ libGDX
   orig: 448, 95
   offset: 0, 0
   index: -1
-Largtext
+LargeText
   rotate: false
   xy: 495, 165
   size: 340, 92
   orig: 340, 92
   offset: 0, 0
   index: -1
-Smalltext
+SmallText
   rotate: false
   xy: 495, 62
   size: 159, 93

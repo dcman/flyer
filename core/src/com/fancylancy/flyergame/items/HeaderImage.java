@@ -9,11 +9,11 @@ import com.fancylancy.flyergame.utils.Assets;
  */
 public class HeaderImage extends BaseImageItem {
     public HeaderImage(float x, float y) {
+        this.x = x;
+        this.y = y;
         TAG = HeaderImage.class.getName();
         batch = Assets.getInstance().getBatch();
         shapeRenderer = new ShapeRenderer();
-        this.x = x;
-        this.y = y;
         atlas = Assets.getInstance().getAtlas();
         textureRegion = atlas.findRegion("Header");
         bounds = new Rectangle(x, y, textureRegion.getRegionWidth(), textureRegion.getRegionHeight());
@@ -30,5 +30,6 @@ public class HeaderImage extends BaseImageItem {
     @Override
     public void dispose() {
         super.dispose();
+
     }
 }
