@@ -7,6 +7,7 @@ import com.fancylancy.flyergame.items.LayoutImage;
 
 /**
  * Created by SuckIt on 6/19/15.
+ * What the screen could look like
  */
 public class LayoutScreen extends BaseScreen {
     private LayoutImage layoutImage;

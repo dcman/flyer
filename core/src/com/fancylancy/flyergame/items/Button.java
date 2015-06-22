@@ -7,6 +7,7 @@ import com.fancylancy.flyergame.utils.Assets;
 
 /**
  * Created by SuckIt on 6/21/15.
+ * Clickable buttons whit text
  */
 public class Button extends BaseImageItem {
     private TextureRegion normal;

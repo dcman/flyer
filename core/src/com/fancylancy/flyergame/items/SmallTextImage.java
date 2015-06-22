@@ -6,6 +6,7 @@ import com.fancylancy.flyergame.utils.Assets;
 
 /**
  * Created by SuckIt on 6/21/15.
+ * Small text box
  */
 public class SmallTextImage extends BaseImageItem {
     public SmallTextImage(float x, float y) {

@@ -13,6 +13,7 @@ import com.fancylancy.flyergame.utils.Assets;
 
 /**
  * Created by SuckIt on 6/16/15.
+ * Base for my custom images
  */
 public class BaseImageItem implements Disposable {
     protected static String TAG;

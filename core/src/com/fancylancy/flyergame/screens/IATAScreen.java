@@ -10,6 +10,7 @@ import com.fancylancy.flyergame.items.SmallTextImage;
 
 /**
  * Created by SuckIt on 6/21/15.
+ * Screen for IATA quiz
  */
 public class IATAScreen extends BaseScreen {
     private HeaderImage headerImage;

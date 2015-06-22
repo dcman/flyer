@@ -7,6 +7,7 @@ import com.fancylancy.flyergame.utils.Assets;
 
 /**
  * Created by SuckIt on 6/19/15.
+ * Test of what the layout could look like
  */
 public class LayoutImage extends BaseImageItem {
     private float textureHalfWidth;

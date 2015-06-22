@@ -6,6 +6,7 @@ import com.fancylancy.flyergame.utils.Assets;
 
 /**
  * Created by SuckIt on 6/21/15.
+ * Header image
  */
 public class HeaderImage extends BaseImageItem {
     public HeaderImage(float x, float y) {
