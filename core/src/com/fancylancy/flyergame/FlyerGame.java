@@ -1,6 +1,5 @@
 package com.fancylancy.flyergame;
 
-import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.fancylancy.flyergame.screens.LogoScreen;
@@ -13,7 +12,7 @@ public class FlyerGame extends Game {
     @Override
     public void create() {
         assets = Assets.getInstance();
-        Gdx.app.setLogLevel(Application.LOG_DEBUG);
+        //Gdx.app.setLogLevel(Application.LOG_DEBUG);
         setScreen(new LogoScreen(this));
     }
 

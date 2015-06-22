@@ -1,46 +1,46 @@
 
 Flyer.png
 format: RGBA8888
-filter: Linear,Linear
+filter: Nearest,Nearest
 repeat: none
 Header
   rotate: false
-  xy: 5, 101
+  xy: 1, 90
   size: 480, 357
   orig: 480, 357
   offset: 0, 0
   index: -1
-Normal
-  rotate: false
-  xy: 5, 5
-  size: 470, 86
-  orig: 470, 86
-  offset: 0, 0
-  index: -1
 Pressed
   rotate: false
-  xy: 495, 372
+  xy: 1, 1
+  size: 471, 87
+  orig: 471, 87
+  offset: 0, 0
+  index: -1
+Normal
+  rotate: false
+  xy: 483, 361
   size: 470, 86
   orig: 470, 86
   offset: 0, 0
   index: -1
 libGDX
   rotate: false
-  xy: 495, 267
+  xy: 483, 264
   size: 448, 95
   orig: 448, 95
   offset: 0, 0
   index: -1
 LargeText
   rotate: false
-  xy: 495, 165
+  xy: 483, 170
   size: 340, 92
   orig: 340, 92
   offset: 0, 0
   index: -1
 SmallText
   rotate: false
-  xy: 495, 62
+  xy: 483, 75
   size: 159, 93
   orig: 159, 93
   offset: 0, 0
