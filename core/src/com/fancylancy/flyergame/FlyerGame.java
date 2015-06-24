@@ -9,12 +9,14 @@ import com.fancylancy.flyergame.utils.Assets;
 public class FlyerGame extends Game {
     private final static String TAG = FlyerGame.class.getName();
     public Assets assets;
+    LogoScreen logoScreen;
 
     @Override
     public void create() {
+        logoScreen = new LogoScreen(this);
         assets = Assets.getInstance();
         Gdx.app.setLogLevel(Application.LOG_DEBUG);
-        setScreen(new LogoScreen(this));
+        setScreen(logoScreen);
 
     }
 
@@ -33,5 +35,6 @@ public class FlyerGame extends Game {
         super.dispose();
         Gdx.app.debug(TAG, " Disposing...");
         assets.dispose();
+        logoScreen.dispose();
     }
 }

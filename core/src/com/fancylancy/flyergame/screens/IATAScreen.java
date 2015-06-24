@@ -25,18 +25,19 @@ public class IATAScreen extends BaseScreen {
     public IATAScreen(Game game) {
         super(game);
         TAG = IATAScreen.class.getName();
+        Gdx.app.debug(TAG, " Created");
         headerImage = new HeaderImage(0f, 442f);
         city = new LargeTextImage(67f, 465f);
         time = new SmallTextImage(289f, 678f);
         score = new SmallTextImage(30f, 678f);
         b1 = new Button(5f, 350f);
-        b1.init("Button 1");
+        b1.setLabel("Button 1");
         b2 = new Button(5f, 263f);
-        b2.init("Button 2");
+        b2.setLabel("Button 2");
         b3 = new Button(5f, 176f);
-        b3.init("Button 3");
+        b3.setLabel("Button 3");
         b4 = new Button(5f, 89f);
-        b4.init("Button 4");
+        b4.setLabel("Button 4");
     }
 
     @Override
@@ -59,5 +60,14 @@ public class IATAScreen extends BaseScreen {
     @Override
     public void dispose() {
         super.dispose();
+        Gdx.app.debug(TAG, " Disposing...");
+        headerImage.dispose();
+        city.dispose();
+        time.dispose();
+        score.dispose();
+        b1.dispose();
+        b2.dispose();
+        b3.dispose();
+        b4.dispose();
     }
 }

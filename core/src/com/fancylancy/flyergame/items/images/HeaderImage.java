@@ -1,5 +1,6 @@
 package com.fancylancy.flyergame.items.images;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.fancylancy.flyergame.utils.Assets;
@@ -13,6 +14,7 @@ public class HeaderImage extends BaseImageItem {
         this.x = x;
         this.y = y;
         TAG = HeaderImage.class.getName();
+        Gdx.app.debug(TAG, " Created");
         batch = Assets.getInstance().getBatch();
         shapeRenderer = new ShapeRenderer();
         atlas = Assets.getInstance().getAtlas();
@@ -31,6 +33,8 @@ public class HeaderImage extends BaseImageItem {
     @Override
     public void dispose() {
         super.dispose();
+        Gdx.app.debug(TAG, " Disposing...");
+        shapeRenderer.dispose();
 
     }
 }

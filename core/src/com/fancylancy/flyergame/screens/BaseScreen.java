@@ -47,8 +47,5 @@ public abstract class BaseScreen extends ScreenAdapter implements Disposable {
     @Override
     public void dispose() {
         super.dispose();
-        Gdx.app.debug(TAG, " Disposing...");
-        assets.dispose();
-        game.dispose();
     }
 }

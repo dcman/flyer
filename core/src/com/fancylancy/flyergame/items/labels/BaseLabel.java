@@ -1,5 +1,6 @@
 package com.fancylancy.flyergame.items.labels;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -50,6 +51,7 @@ public class BaseLabel implements Disposable {
 
     @Override
     public void dispose() {
+        Gdx.app.debug(TAG, " Disposing...");
         text.dispose();
         subText.dispose();
     }

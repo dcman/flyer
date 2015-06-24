@@ -1,5 +1,6 @@
 package com.fancylancy.flyergame.items.images;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
@@ -36,6 +37,7 @@ public class LayoutImage extends BaseImageItem {
     @Override
     public void dispose() {
         super.dispose();
-
+        Gdx.app.debug(TAG, " Disposing...");
+        shapeRenderer.dispose();
     }
 }

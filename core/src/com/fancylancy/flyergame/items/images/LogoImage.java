@@ -1,5 +1,6 @@
 package com.fancylancy.flyergame.items.images;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.fancylancy.flyergame.utils.Assets;
@@ -16,6 +17,7 @@ public class LogoImage extends BaseImageItem {
 
     public LogoImage() {
         TAG = LogoImage.class.getName();
+        Gdx.app.debug(TAG, " Created");
         textureRegion = Assets.getInstance().getRegion();
         batch = Assets.getInstance().getBatch();
         textureHalfHeight = textureRegion.getRegionHeight() / 2;
@@ -36,6 +38,7 @@ public class LogoImage extends BaseImageItem {
     @Override
     public void dispose() {
         super.dispose();
-
+        Gdx.app.debug(TAG, " Disposing...");
+        shapeRenderer.dispose();
     }
 }

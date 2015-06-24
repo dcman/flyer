@@ -1,5 +1,6 @@
 package com.fancylancy.flyergame.items.images;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
@@ -21,6 +22,7 @@ public class Button extends BaseImageItem {
         this.x = x;
         this.y = y;
         TAG = Button.class.getName();
+        Gdx.app.debug(TAG, " Created");
         isPressed = false;
         atlas = Assets.getInstance().getAtlas();
         batch = Assets.getInstance().getBatch();
@@ -31,7 +33,7 @@ public class Button extends BaseImageItem {
         uniLabel = new UniLabel(x, y, normal.getRegionHeight(), normal.getRegionWidth(), label);
     }
 
-    public void init(String label) {
+    public void setLabel(String label) {
         uniLabel.init(x, y, label);
     }
     @Override
@@ -58,5 +60,9 @@ public class Button extends BaseImageItem {
     @Override
     public void dispose() {
         super.dispose();
+        Gdx.app.debug(TAG, " Disposing...");
+        uniLabel.dispose();
+        texture.dispose();
+        shapeRenderer.dispose();
     }
 }

@@ -1,5 +1,6 @@
 package com.fancylancy.flyergame.items.images;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.fancylancy.flyergame.utils.Assets;
@@ -11,6 +12,7 @@ import com.fancylancy.flyergame.utils.Assets;
 public class LargeTextImage extends BaseImageItem {
     public LargeTextImage(float x, float y) {
         TAG = LargeTextImage.class.getName();
+        Gdx.app.debug(TAG, " Created");
         this.x = x;
         this.y = y;
         batch = Assets.getInstance().getBatch();
@@ -31,5 +33,7 @@ public class LargeTextImage extends BaseImageItem {
     @Override
     public void dispose() {
         super.dispose();
+        Gdx.app.debug(TAG, " Disposing...");
+        shapeRenderer.dispose();
     }
 }

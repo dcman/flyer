@@ -62,6 +62,6 @@ public class BaseImageItem implements Disposable {
 
     @Override
     public void dispose() {
-
+        Gdx.app.debug(TAG, " Disposing...");
     }
 }

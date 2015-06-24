@@ -47,5 +47,6 @@ public class LogoScreen extends BaseScreen {
     public void dispose() {
         super.dispose();
         Gdx.app.debug(TAG, " Disposing...");
+        logoImage.dispose();
     }
 }

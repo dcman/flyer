@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 public class UniLabel extends BaseLabel {
     public UniLabel(float x, float y, float height, float width, String label) {
         super(x, y, height, width, label);
+        TAG = UniLabel.class.getName();
         text = new BitmapFont(Gdx.files.internal("Roboto-Black-56.fnt"), false);
         text.setColor(33 / 255, 33 / 255, 33 / 255, 1);
         subText = new BitmapFont(Gdx.files.internal("Roboto-Black-56.fnt"), false);
@@ -35,5 +36,13 @@ public class UniLabel extends BaseLabel {
         } else {
             text.draw(batch, label, x, y);
         }
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        Gdx.app.debug(TAG, " Disposing...");
+        text.dispose();
+        subText.dispose();
     }
 }
