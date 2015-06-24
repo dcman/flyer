@@ -9,20 +9,16 @@ import com.fancylancy.flyergame.utils.Assets;
  * Created by SuckIt on 6/21/15.
  */
 public class TestLabel extends BaseLabel {
-
-    public TestLabel(float x, float y) {
-        this.x = x;
-        this.y = y;
-        font = new BitmapFont(Gdx.files.internal("Roboto-Black-56.fnt"), false);
-        font.setColor(Color.BLACK);
-        label = "This Is a Test!!!!";
+    public TestLabel(float x, float y, float height, float width, String label) {
+        super(x, y, height, width, label);
+        text = new BitmapFont(Gdx.files.internal("Roboto-Black-56.fnt"), false);
+        text.setColor(Color.BLACK);
         batch = Assets.getInstance().getBatch();
-
     }
 
     @Override
     public void render(float delta) {
         super.render(delta);
-        font.draw(batch, label, x + 5, y + font.getXHeight() * 2.25f);
+        text.draw(batch, label, x + 5, y + text.getXHeight() * 2.25f);
     }
 }

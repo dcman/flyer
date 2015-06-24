@@ -11,6 +11,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Disposable;
 import com.fancylancy.flyergame.utils.Assets;
 
+
 /**
  * Created by SuckIt on 6/16/15.
  * Base for my custom images
@@ -25,6 +26,7 @@ public class BaseImageItem implements Disposable {
     protected ShapeRenderer shapeRenderer;
     protected float x;
     protected float y;
+    protected String label = "Place holder";
 
     public BaseImageItem() {
 

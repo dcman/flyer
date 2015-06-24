@@ -30,6 +30,7 @@ public class IATAScreen extends BaseScreen {
         time = new SmallTextImage(289f, 678f);
         score = new SmallTextImage(30f, 678f);
         b1 = new Button(5f, 350f);
+        //b1.init("Button 1");
         b2 = new Button(5f, 263f);
         b3 = new Button(5f, 176f);
         b4 = new Button(5f, 89f);

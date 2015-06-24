@@ -3,8 +3,7 @@ package com.fancylancy.flyergame.items.images;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
-import com.fancylancy.flyergame.items.labels.TestLabel;
-import com.fancylancy.flyergame.items.labels.TestShadow;
+import com.fancylancy.flyergame.items.labels.UniLabel;
 import com.fancylancy.flyergame.utils.Assets;
 
 /**
@@ -15,8 +14,8 @@ public class Button extends BaseImageItem {
     private TextureRegion normal;
     private TextureRegion pressed;
     private boolean isPressed;
-    private TestLabel test;
-    private TestShadow shadow;
+    private UniLabel uniLabel;
+
 
     public Button(float x, float y) {
         this.x = x;
@@ -29,23 +28,23 @@ public class Button extends BaseImageItem {
         normal = atlas.findRegion("Normal");
         bounds = new Rectangle(x, y, normal.getRegionWidth(), normal.getRegionHeight());
         shapeRenderer = new ShapeRenderer();
-        test = new TestLabel(x, y);
-        shadow = new TestShadow(x, y);
-
+        uniLabel = new UniLabel(x, y, normal.getRegionHeight(), normal.getRegionWidth(), label);
     }
 
+    public void init(String label) {
+        uniLabel.initLabel(label);
+    }
     @Override
     public void render(float delta) {
         super.render(delta);
         batch.begin();
         if (isPressed) {
             batch.draw(pressed, x, y);
-            shadow.render(delta);
         }
         if (!isPressed) {
             batch.draw(normal, x, y);
         }
-        test.render(delta);
+        uniLabel.render(delta);
         batch.end();
         clickHandler();
     }
@@ -53,6 +52,7 @@ public class Button extends BaseImageItem {
     @Override
     protected void clicked() {
         isPressed ^= true;
+        uniLabel.setShadow(!uniLabel.isShadow());
     }
 
     @Override
