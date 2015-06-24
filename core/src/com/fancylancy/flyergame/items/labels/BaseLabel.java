@@ -27,8 +27,6 @@ public class BaseLabel implements Disposable {
         this.batch = Assets.getInstance().getBatch();
         this.height = height;
         this.width = width;
-        this.x = x;
-        this.y = y;
     }
 
     public void render(float delta) {

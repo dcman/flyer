@@ -32,7 +32,7 @@ public class Button extends BaseImageItem {
     }
 
     public void init(String label) {
-        uniLabel.initLabel(label);
+        uniLabel.init(x, y, label);
     }
     @Override
     public void render(float delta) {
