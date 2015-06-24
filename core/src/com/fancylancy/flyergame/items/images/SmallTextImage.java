@@ -1,8 +1,10 @@
 package com.fancylancy.flyergame.items.images;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
+import com.fancylancy.flyergame.items.labels.UniLabel;
 import com.fancylancy.flyergame.utils.Assets;
 
 /**
@@ -10,6 +12,9 @@ import com.fancylancy.flyergame.utils.Assets;
  * Small text box
  */
 public class SmallTextImage extends BaseImageItem {
+    private UniLabel uniLabel;
+    private TextureRegion textureRegion;
+
     public SmallTextImage(float x, float y) {
         this.x = x;
         this.y = y;
@@ -20,6 +25,12 @@ public class SmallTextImage extends BaseImageItem {
         atlas = Assets.getInstance().getAtlas();
         textureRegion = atlas.findRegion("SmallText");
         bounds = new Rectangle(x, y, textureRegion.getRegionWidth(), textureRegion.getRegionHeight());
+        uniLabel = new UniLabel(x, y, textureRegion.getRegionHeight(), textureRegion.getRegionWidth(), label);
+
+    }
+
+    public void setLabel(String label) {
+        uniLabel.init(x, y, label);
     }
 
     @Override
@@ -27,6 +38,7 @@ public class SmallTextImage extends BaseImageItem {
         super.render(delta);
         batch.begin();
         batch.draw(textureRegion, x, y);
+        uniLabel.render(delta);
         batch.end();
     }
 
@@ -35,5 +47,6 @@ public class SmallTextImage extends BaseImageItem {
         super.dispose();
         Gdx.app.debug(TAG, " Disposing...");
         shapeRenderer.dispose();
+        uniLabel.dispose();
     }
 }

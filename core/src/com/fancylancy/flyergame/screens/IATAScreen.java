@@ -28,8 +28,11 @@ public class IATAScreen extends BaseScreen {
         Gdx.app.debug(TAG, " Created");
         headerImage = new HeaderImage(0f, 442f);
         city = new LargeTextImage(67f, 465f);
+        city.setLabel("City");
         time = new SmallTextImage(289f, 678f);
+        time.setLabel("Time");
         score = new SmallTextImage(30f, 678f);
+        score.setLabel("Score");
         b1 = new Button(5f, 350f);
         b1.setLabel("Button 1");
         b2 = new Button(5f, 263f);
