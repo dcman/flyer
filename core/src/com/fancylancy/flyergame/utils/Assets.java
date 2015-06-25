@@ -50,7 +50,7 @@ public class Assets extends AssetManager implements Disposable {
         json = new Json();
         FileHandle file = Gdx.files.internal("UShard.json");
         ran = new Random();
-        airports = json.fromJson(ArrayList.class, file);
+        airports = json.fromJson(ArrayList.class,file);
     }
 
     public static Assets getInstance() {
@@ -93,7 +93,7 @@ public class Assets extends AssetManager implements Disposable {
         this.atlas = atlas;
     }
 
-    public ArrayList<Airport> list() {
+    public ArrayList<Airport> list(){
         ArrayList<Airport> temp = new ArrayList<Airport>();
         temp.add(airports.get(ran.nextInt(airports.size())));
         temp.add(airports.get(ran.nextInt(airports.size())));
