@@ -2,14 +2,20 @@ package com.fancylancy.flyergame.utils;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Disposable;
+import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.fancylancy.flyergame.items.Airport;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by SuckIt on 6/16/15.
@@ -27,6 +33,10 @@ public class Assets extends AssetManager implements Disposable {
     private Viewport viewport;
     private TextureAtlas atlas;
     private TextureRegion region;
+    private ArrayList<Airport> airports;
+    private Json json;
+    private FileHandle file;
+    private Random ran;
 
     private Assets() {
         camera = new OrthographicCamera(screenWidth, screenHeight);
@@ -37,6 +47,10 @@ public class Assets extends AssetManager implements Disposable {
         img = new Texture("libGDX.png");
         atlas = new TextureAtlas("Flyer.pack");
         region = atlas.findRegion("libGDX");
+        json = new Json();
+        FileHandle file = Gdx.files.internal("UShard.json");
+        ran = new Random();
+        airports = json.fromJson(ArrayList.class, file);
     }
 
     public static Assets getInstance() {
@@ -77,6 +91,15 @@ public class Assets extends AssetManager implements Disposable {
 
     public void setAtlas(TextureAtlas atlas) {
         this.atlas = atlas;
+    }
+
+    public ArrayList<Airport> list() {
+        ArrayList<Airport> temp = new ArrayList<Airport>();
+        temp.add(airports.get(ran.nextInt(airports.size())));
+        temp.add(airports.get(ran.nextInt(airports.size())));
+        temp.add(airports.get(ran.nextInt(airports.size())));
+        temp.add(airports.get(ran.nextInt(airports.size())));
+        return temp;
     }
     @Override
     public synchronized void dispose() {

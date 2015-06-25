@@ -8,7 +8,10 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Disposable;
+import com.fancylancy.flyergame.items.Airport;
 import com.fancylancy.flyergame.utils.Assets;
+
+import java.util.ArrayList;
 
 /**
  * Created by SuckIt on 6/16/15.
@@ -21,6 +24,8 @@ public abstract class BaseScreen extends ScreenAdapter implements Disposable {
     protected Assets assets;
     protected Rectangle bounds;
     protected SpriteBatch batch;
+    protected ArrayList<Airport> list;
+    protected Airport answer;
 
     public BaseScreen(Game game) {
         this.game = game;

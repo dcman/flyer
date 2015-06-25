@@ -7,6 +7,7 @@ import com.fancylancy.flyergame.items.images.Button;
 import com.fancylancy.flyergame.items.images.HeaderImage;
 import com.fancylancy.flyergame.items.images.LargeTextImage;
 import com.fancylancy.flyergame.items.images.SmallTextImage;
+import com.fancylancy.flyergame.utils.Assets;
 
 /**
  * Created by SuckIt on 6/21/15.
@@ -26,21 +27,22 @@ public class IATAScreen extends BaseScreen {
         super(game);
         TAG = IATAScreen.class.getName();
         Gdx.app.debug(TAG, " Created");
+        list = Assets.getInstance().list();
         headerImage = new HeaderImage(0f, 442f);
         city = new LargeTextImage(67f, 465f);
-        city.setLabel("City");
+        city.setLabel(list.get(0).getCity());
         time = new SmallTextImage(289f, 678f);
         time.setLabel("Time");
         score = new SmallTextImage(30f, 678f);
         score.setLabel("Score");
         b1 = new Button(5f, 350f);
-        b1.setLabel("Button 1");
+        b1.setLabel(list.get(0).getIata());
         b2 = new Button(5f, 263f);
-        b2.setLabel("Button 2");
+        b2.setLabel(list.get(1).getIata());
         b3 = new Button(5f, 176f);
-        b3.setLabel("Button 3");
+        b3.setLabel(list.get(2).getIata());
         b4 = new Button(5f, 89f);
-        b4.setLabel("Button 4");
+        b4.setLabel(list.get(3).getIata());
     }
 
     @Override
