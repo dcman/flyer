@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.fancylancy.flyergame.items.Airport;
 
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -51,7 +52,9 @@ public class Assets extends AssetManager implements Disposable {
         FileHandle file = Gdx.files.internal("UShard.json");
         ran = new Random();
         airports = json.fromJson(ArrayList.class,file);
+
     }
+
 
     public static Assets getInstance() {
         return ourInstance;

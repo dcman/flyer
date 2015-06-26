@@ -2,12 +2,17 @@ package com.fancylancy.flyergame.screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.utils.Json;
+import com.fancylancy.flyergame.items.Airport;
 import com.fancylancy.flyergame.items.images.Button;
 import com.fancylancy.flyergame.items.images.HeaderImage;
 import com.fancylancy.flyergame.items.images.LargeTextImage;
 import com.fancylancy.flyergame.items.images.SmallTextImage;
 import com.fancylancy.flyergame.utils.Assets;
+
+import java.util.ArrayList;
 
 /**
  * Created by SuckIt on 6/21/15.
@@ -43,6 +48,7 @@ public class IATAScreen extends BaseScreen {
         b3.setLabel(list.get(2).getIata());
         b4 = new Button(5f, 89f);
         b4.setLabel(list.get(3).getIata());
+
     }
 
     @Override
