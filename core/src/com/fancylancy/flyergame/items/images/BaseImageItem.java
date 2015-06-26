@@ -35,6 +35,7 @@ public class BaseImageItem implements Disposable {
     public BaseImageItem(float x, float y) {
 
     }
+
     protected void clickHandler() {
         if (Gdx.input.justTouched()) {
             Vector3 touch = new Vector3();

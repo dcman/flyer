@@ -39,6 +39,7 @@ public class Button extends BaseImageItem {
         this.label = label;
         uniLabel.init(x, y, label);
     }
+
     @Override
     public void render(float delta) {
         super.render(delta);
