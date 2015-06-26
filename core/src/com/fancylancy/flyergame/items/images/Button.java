@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.fancylancy.flyergame.items.labels.UniLabel;
+import com.fancylancy.flyergame.screens.IATAScreen;
 import com.fancylancy.flyergame.utils.Assets;
 
 /**
@@ -16,11 +17,12 @@ public class Button extends BaseImageItem {
     private TextureRegion pressed;
     private boolean isPressed;
     private UniLabel uniLabel;
+    private IATAScreen screen;
 
-
-    public Button(float x, float y) {
+    public Button(float x, float y, IATAScreen screen) {
         this.x = x;
         this.y = y;
+        this.screen = screen;
         TAG = Button.class.getName();
         Gdx.app.debug(TAG, " Created");
         isPressed = false;
@@ -34,6 +36,7 @@ public class Button extends BaseImageItem {
     }
 
     public void setLabel(String label) {
+        this.label = label;
         uniLabel.init(x, y, label);
     }
     @Override
@@ -53,8 +56,19 @@ public class Button extends BaseImageItem {
 
     @Override
     protected void clicked() {
-        isPressed ^= true;
-        uniLabel.setShadow(!uniLabel.isShadow());
+        //isPressed ^= true;
+        // uniLabel.setShadow(!uniLabel.isShadow());
+        if (label.equals(screen.getWinner())) {
+            Gdx.app.debug(TAG, " Win " + label + " " + screen.getWinner());
+            screen.setPos(screen.getPos() + 1);
+            screen.setGame();
+        } else {
+            Gdx.app.debug(TAG, " Lost " + label + " " + screen.getWinner());
+            screen.setNeg(screen.getNeg() - 1);
+
+            screen.setGame();
+        }
+        screen.scoreUpdate();
     }
 
     @Override
